@@ -30,7 +30,7 @@ df_exp = df_exp.astype({'없음' : 'float'})
 df_exp = df_exp.astype({'있음' : 'float'})
 
 st.write("""
-### 경험 없음
+### 경험이 
 """)
 
 fig, ax = plt.subplots()
