@@ -29,10 +29,18 @@ df_exp = df_exp.astype({'없음' : 'float'})
 
 df_exp = df_exp.astype({'있음' : 'float'})
 
+st.write("""
+### 경험 없음
+""")
+
 fig, ax = plt.subplots()
 sns.barplot(data=df_exp, x="연도", y="없음", hue="품목군").set_title("간편식 구입경험")
 plt.legend(bbox_to_anchor=(1,1))
 st.pyplot(fig)
+
+st.write("""
+### 경험 있음
+""")
 
 fig, ax = plt.subplots()
 sns.barplot(data=df_exp, x="연도", y="있음", hue="품목군").set_title("간편식 구입경험")
