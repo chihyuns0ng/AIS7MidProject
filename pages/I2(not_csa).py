@@ -7,7 +7,7 @@ import plotly.express as px
 import koreanize_matplotlib
 
 st.set_page_config(
-    page_title="MID_일론머스크",
+    page_title="구입하지 않는 이유 ",
     page_icon="🚀",
     layout="wide",
 )
