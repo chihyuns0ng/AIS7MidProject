@@ -7,7 +7,7 @@ import plotly.express as px
 import koreanize_matplotlib
 
 st.set_page_config(
-    page_title="구입경험 및 구입변화",
+    page_title="구입변화",
     page_icon="🚀",
     layout="wide",
 )
