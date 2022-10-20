@@ -27,30 +27,54 @@ df_ch = df_ch.astype({'약간증가' : 'float'})
 df_ch = df_ch.astype({'매우증가' : 'float'})
 df_ch = df_ch.astype({'평균' : 'float'})
 
+st.write("""
+### 매우 감소
+""")
+
 fig, ax = plt.subplots()
 sns.barplot(data=df_ch, x="연도", y="매우감소", hue="품목군").set_title("간편식 구입변화(%)")
 plt.legend(bbox_to_anchor=(1,1))
 st.pyplot(fig)
+
+st.write("""
+### 약간 감소
+""")
 
 fig, ax = plt.subplots()
 sns.barplot(data=df_ch, x="연도", y="약간감소", hue="품목군").set_title("간편식 구입변화(%)")
 plt.legend(bbox_to_anchor=(1,1))
 st.pyplot(fig)
 
+st.write("""
+### 비슷
+""")
+
 fig, ax = plt.subplots()
 sns.barplot(data=df_ch, x="연도", y="비슷", hue="품목군").set_title("간편식 구입변화")
 plt.legend(bbox_to_anchor=(1,1))
 st.pyplot(fig)
+
+st.write("""
+### 약간 증가
+""")
 
 fig, ax = plt.subplots()
 sns.barplot(data=df_ch, x="연도", y="약간증가", hue="품목군").set_title("간편식 구입변화(%)")
 plt.legend(bbox_to_anchor=(1,1))
 st.pyplot(fig)
 
+st.write("""
+### 매우 증가
+""")
+
 fig, ax = plt.subplots()
 sns.barplot(data=df_ch, x="연도", y="매우증가", hue="품목군").set_title("간편식 구입변화(%)")
 plt.legend(bbox_to_anchor=(1,1))
 st.pyplot(fig)
+
+st.write("""
+### 평균
+""")
 
 fig, ax = plt.subplots()
 sns.barplot(data=df_ch, x="연도", y="평균", hue="품목군").set_title("간편식 구입변화 평균(점)")
