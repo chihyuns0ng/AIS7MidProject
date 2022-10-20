@@ -7,7 +7,7 @@ import plotly.express as px
 import koreanize_matplotlib
 
 st.set_page_config(
-    page_title="동조성 ",
+    page_title="동조성 데이터",
     page_icon="🚀",
     layout="wide",
 )
