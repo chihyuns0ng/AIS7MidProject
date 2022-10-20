@@ -14,7 +14,8 @@ st.set_page_config(
 )
 
 st.markdown("# 🚀1론머스크🚀")
-st.sidebar.markdown("# 공공데이터")
+st.sidebar.markdown("# 간편식 구입이유")
+st.sidebar.markdown("# 연령별👶🧑👴")
 
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
