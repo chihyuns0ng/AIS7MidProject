@@ -29,6 +29,8 @@ df_exp = df_exp.astype({'없음' : 'float'})
 
 df_exp = df_exp.astype({'있음' : 'float'})
 
+st.dataframe(df_exp)
+
 st.write("""
 ### 경험 없음
 """)
