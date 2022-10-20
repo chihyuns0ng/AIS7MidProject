@@ -34,6 +34,7 @@ st.write("""
 st.set_option('deprecation.showPyplotGlobalUse', False)
 plt.figure(figsize=(15, 5))
 sns.barplot(data=data_6, x="연도", y="없음", hue="품목군").set_title("연도별 간편식 구입경험")
+plt.legend(bbox_to_anchor=(1,1))
 st.pyplot()
 
 st.write("""
@@ -43,4 +44,5 @@ st.write("""
 st.set_option('deprecation.showPyplotGlobalUse', False)
 plt.figure(figsize=(15, 5))
 sns.barplot(data=data_6, x="연도", y="있음", hue="품목군").set_title("연도별 간편식 구입경험")
+plt.legend(bbox_to_anchor=(1,1))
 st.pyplot()
