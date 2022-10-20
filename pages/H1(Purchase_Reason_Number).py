@@ -48,11 +48,11 @@ plt.legend(fontsize=20, bbox_to_anchor=(1.2,1))
 st.pyplot(plt.show())
 
 fig = kosis3_20_number.T[:-2].plot(kind="bar", figsize=(20,10),fontsize=15, rot=20)
-plt.title("2019년 가구원수별", fontsize=20)
+plt.title("2020년 가구원수별", fontsize=20)
 plt.legend(fontsize=20, bbox_to_anchor=(1.2,1))
 st.pyplot(plt.show())
 
 fig = kosis3_21_number.T[:-2].plot(kind="bar", figsize=(20,10),fontsize=15, rot=20)
-plt.title("2019년 가구원수별", fontsize=20)
+plt.title("2021년 가구원수별", fontsize=20)
 plt.legend(fontsize=20, bbox_to_anchor=(1.2,1))
 st.pyplot(plt.show())
