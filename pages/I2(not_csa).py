@@ -7,7 +7,7 @@ import plotly.express as px
 import koreanize_matplotlib
 
 st.set_page_config(
-    page_title="구입하지 않는 이유 ",
+    page_title="구입하지 않는 이유 시각화",
     page_icon="🚀",
     layout="wide",
 )
