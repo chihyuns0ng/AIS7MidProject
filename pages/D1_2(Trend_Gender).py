@@ -71,16 +71,27 @@ df_21_s = df_21_s.rename_axis('성별')
 
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
+st.write("""
+### 2019년
+""")
 
 fig = df_19_s.T.plot(kind='bar', figsize=(25,10), rot=5, fontsize=15)
 plt.title("2019년 성별", fontsize=20)
 plt.legend(fontsize=20, bbox_to_anchor=(1.2,1))
 st.pyplot(plt.show())
 
+st.write("""
+### 2020년
+""")
+
 fig = df_20_s.T.plot(kind='bar', figsize=(25,10), rot=5, fontsize=15)
 plt.title("2020년 성별", fontsize=20)
 plt.legend(fontsize=20, bbox_to_anchor=(1.2,1))
 st.pyplot(plt.show())
+
+st.write("""
+### 2021년
+""")
 
 fig = df_21_s.T.plot(kind='bar', figsize=(25,10), rot=5, fontsize=15)
 plt.title("2021년 성별", fontsize=20)
