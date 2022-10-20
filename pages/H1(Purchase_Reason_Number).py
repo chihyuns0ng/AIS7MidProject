@@ -41,16 +41,27 @@ kosis3_20_number = kosis3_20_number.rename_axis("가구원수")
 kosis3_21_number = kosis3_21_number.set_index("특성별(2)")
 kosis3_21_number = kosis3_21_number.rename_axis("가구원수")
 
+st.write("""
+### 2019년
+""")
 
 fig = kosis3_19_number.T[:-2].plot(kind="bar", figsize=(20,10),fontsize=15, rot=20)
 plt.title("2019년 가구원수별", fontsize=20)
 plt.legend(fontsize=20, bbox_to_anchor=(1.2,1))
 st.pyplot(plt.show())
 
+st.write("""
+### 2020년
+""")
+
 fig = kosis3_20_number.T[:-2].plot(kind="bar", figsize=(20,10),fontsize=15, rot=20)
 plt.title("2020년 가구원수별", fontsize=20)
 plt.legend(fontsize=20, bbox_to_anchor=(1.2,1))
 st.pyplot(plt.show())
+
+st.write("""
+### 2021년
+""")
 
 fig = kosis3_21_number.T[:-2].plot(kind="bar", figsize=(20,10),fontsize=15, rot=20)
 plt.title("2021년 가구원수별", fontsize=20)
