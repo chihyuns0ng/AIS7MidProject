@@ -12,7 +12,7 @@ st.set_page_config(
     layout="wide",
 )
 
-st.markdown("# 가공 식품 가격 등락 민감도 📈")
+st.markdown("# 가공 식품 가격 상승 인식도 📈")
 
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
