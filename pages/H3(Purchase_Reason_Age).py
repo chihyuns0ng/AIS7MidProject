@@ -14,8 +14,7 @@ st.set_page_config(
 )
 
 st.markdown("# 간편식 구입이유 - 연령별👶🧑👴")
-st.sidebar.markdown("# 간편식 구입이유")
-st.sidebar.markdown("# 연령별👶🧑👴")
+
 
 st.set_option('deprecation.showPyplotGlobalUse', False)
 

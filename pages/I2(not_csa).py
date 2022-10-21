@@ -13,11 +13,9 @@ st.set_page_config(
 )
 
 st.markdown("# 간편식 구입하지 않는 이유 📈")
-st.sidebar.markdown("# 간편식 관련 분석 데이터 📈")
 
 
 url21 = 'https://raw.githubusercontent.com/HyenC/AIS7MidProject/main/data/%E1%84%80%E1%85%A1%E1%86%AB%E1%84%91%E1%85%A7%E1%86%AB%E1%84%89%E1%85%B5%E1%86%A8_%E1%84%80%E1%85%AE%E1%84%8B%E1%85%B5%E1%86%B8%E1%84%92%E1%85%A1%E1%84%8C%E1%85%B5_%E1%84%8B%E1%85%A1%E1%86%AD%E1%84%82%E1%85%B3%E1%86%AB_%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%B2_21.csv'
-
 
 @st.cache
 def load_data(url21):

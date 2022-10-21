@@ -14,8 +14,7 @@ st.set_page_config(
 )
 
 st.markdown("# 간편식 구입이유 - 가구원수별👨‍👩‍👧‍👦")
-st.sidebar.markdown("# 간편식 구입이유")
-st.sidebar.markdown("# 가구원수별👨‍👩‍👧‍👦")
+
 
 st.set_option('deprecation.showPyplotGlobalUse', False)
 

@@ -13,7 +13,6 @@ st.set_page_config(
 )
 
 st.markdown("# 💲월평균 간편식 지출액💲")
-st.sidebar.markdown("# 💲월평균 간편식 지출액💲")
 
 url1 = "https://raw.githubusercontent.com/chihyuns0ng/AIS7MidProject/main/data/kosis4_19.csv"
 url2 = "https://raw.githubusercontent.com/chihyuns0ng/AIS7MidProject/main/data/kosis4_20.csv"
