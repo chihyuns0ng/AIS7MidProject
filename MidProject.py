@@ -14,7 +14,8 @@ st.set_page_config(
 )
 
 st.markdown("# 🚀1론머스크🚀")
-st.sidebar.markdown("# 공공데이터")
+st.sidebar.markdown("# 유통데이터 활용")
+st.sidebar.markdown("# 경진대회")
 
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
