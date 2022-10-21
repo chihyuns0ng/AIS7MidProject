@@ -14,8 +14,6 @@ st.set_page_config(
 )
 
 st.markdown("# 🚀유통데이터 활용 경진대회📊")
-st.markdown("# ")
-st.markdown("# ")
 
 def load_image(image_file):
     img = Image.open(image_file)
