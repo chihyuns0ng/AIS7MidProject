@@ -13,7 +13,6 @@ st.set_page_config(
 )
 
 st.markdown("# 식품소비 트렌드별 동조성 📈")
-st.sidebar.markdown("# 간편식 관련 분석 데이터 📈")
 
 st.write("""
 ### 2019년
