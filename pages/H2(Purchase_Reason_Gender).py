@@ -54,30 +54,24 @@ for i in kosis3_gender.columns:
     
 df = kosis3_gender.drop(["남성", "여성"])
 
-st.write("""
-### 2019년
-""")
 
 fig = plt.pie(df.T["2019년"][:-2], labels=df.T.index[:-2], startangle=180, autopct='%1.1f%%', counterclock=False, wedgeprops=dict(width=0.5)
             , explode=(0.02, 0.02, 0.02, 0.02, 0.02, 0.02, 0.02, 0.02), colors=["royalblue", "gold", "silver", "tomato", "violet", "darkgray", "gainsboro", "gainsboro"])
-plt.legend(bbox_to_anchor=(1.1,1))
+plt.legend(bbox_to_anchor=(1.2,1.1))
 plt.title("2019년 구입 이유")
 st.pyplot()
 
-st.write("""
-### 2020년
-""")
 
-fig = kosis3_20_gender.T[:-2].plot(kind="bar", figsize=(20,10),fontsize=15, rot=20)
-plt.title("2020년 성별별", fontsize=20)
-plt.legend(fontsize=20, bbox_to_anchor=(1.2,1))
-st.pyplot(plt.show())
+fig = plt.pie(df.T["2020년"][:-2], labels=df.T.index[:-2], startangle=180, autopct='%1.1f%%', counterclock=False, wedgeprops=dict(width=0.5)
+            , explode=(0.02, 0.02, 0.02, 0.02, 0.02, 0.02, 0.02, 0.02), colors=["royalblue", "gold", "gainsboro", "tomato", "violet", "darkgray", "silver", "gainsboro"])
+plt.legend(bbox_to_anchor=(1.2,1.1))
+plt.title("2019년 구입 이유")
+st.pyplot()
 
-st.write("""
-### 2021년
-""")
 
-fig = kosis3_21_gender.T[:-2].plot(kind="bar", figsize=(20,10),fontsize=15, rot=20)
-plt.title("2021년 성별별", fontsize=20)
-plt.legend(fontsize=20, bbox_to_anchor=(1.2,1))
-st.pyplot(plt.show())
+
+fig = plt.pie(df.T["2021년"][:-2], labels=df.T.index[:-2], startangle=180, autopct='%1.1f%%', counterclock=False, wedgeprops=dict(width=0.5)
+            , explode=(0.02, 0.02, 0.02, 0.02, 0.02, 0.02, 0.02, 0.02), colors=["royalblue", "gold", "darkgray", "tomato", "violet", "darkgray", "silver", "gainsboro"])
+plt.legend(bbox_to_anchor=(1.2,1.1))
+plt.title("2019년 구입 이유")
+st.pyplot()
