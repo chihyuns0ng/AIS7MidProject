@@ -8,12 +8,12 @@ import koreanize_matplotlib
 # import plotly.graph_objects as go
 
 st.set_page_config(
-    page_title="성별별 구입이유",
+    page_title="간편식 구입이유",
     page_icon="🚀",
     layout="wide",
 )
 
-st.markdown("# 간편식 구입이유 - 성별별🧑👩")
+st.markdown("# 간편식 구입이유")
 
 
 st.set_option('deprecation.showPyplotGlobalUse', False)
