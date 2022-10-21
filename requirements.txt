@@ -5,4 +5,4 @@ plotly
 seaborn
 matplotlib
 koreanize_matplotlib
-PIL
+pillow
