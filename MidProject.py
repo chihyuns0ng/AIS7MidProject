@@ -14,7 +14,6 @@ st.set_page_config(
 )
 
 st.markdown("# 🚀유통데이터 활용 경진대회📊")
-# st.sidebar.markdown("# 유통데이터 활용 경진대회")
 
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
