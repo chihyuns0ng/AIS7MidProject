@@ -28,7 +28,7 @@ def load_data(url_2):
     data_2 = pd.read_csv(url_2)
     return data_2
 
-@st.cache
+@st.cache(allow_output_mutation=True)
 def load_data(url_3):
     data_3 = pd.read_csv(url_3)
     return data_3
