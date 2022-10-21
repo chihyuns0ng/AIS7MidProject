@@ -7,7 +7,7 @@ import plotly.express as px
 import koreanize_matplotlib
 
 st.set_page_config(
-    page_title="가구원수별 동조성",
+    page_title="MID_일론머스크",
     page_icon="🚀",
     layout="wide",
 )
@@ -42,14 +42,29 @@ df_21 = load_data(url21)
 df_t19 = df_19.rename(columns=df_19.iloc[0])
 df_t19 = df_t19.drop(df_t19.index[0])
 df_t19 = df_t19.astype({i:"float" for i in df_t19.columns[2:]})
+df_t19 = df_t19.rename(columns={'가격이 비싸도 프리미엄(고급)제품을 구입하겠다':'프리미엄 제품'
+                            ,'가격이 비싸도 다양하고 새로운 맛을 첨가한 제품을 구입하겠다':'새롭고 다양한 맛'
+                            ,'가격이 비싸도 건강에 좋은 원료 안전성이 확보된 제품을 구입하겠다':'원료 안전성'
+                            ,'가격이 비싸도 소포장 사용 및 취식/조리가 간편화된 제품을 구입하겠다':'소포장, 조리 간편화'
+                            ,'제품의 업그레이드/신제품 개발과 관계없이 가격만 저렴하면 구입하겠다':'오로지 가격'})
 
 df_t20 = df_20.rename(columns=df_20.iloc[0])
 df_t20 = df_t20.drop(df_t20.index[0])
 df_t20 = df_t20.astype({i:"float" for i in df_t20.columns[2:]})
+df_t20 = df_t20.rename(columns={'가격이 비싸도 프리미엄(고급)제품을 구입하겠다':'프리미엄 제품'
+                            ,'가격이 비싸도 다양하고 새로운 맛을 첨가한 제품을 구입하겠다':'새롭고 다양한 맛'
+                            ,'가격이 비싸도 건강에 좋은 원료 안전성이 확보된 제품을 구입하겠다':'원료 안전성'
+                            ,'가격이 비싸도 소포장 사용 및 취식/조리가 간편화된 제품을 구입하겠다':'소포장, 조리 간편화'
+                            ,'제품의 업그레이드/신제품 개발과 관계없이 가격만 저렴하면 구입하겠다':'오로지 가격'})
 
 df_t21 = df_21.rename(columns=df_21.iloc[0])
 df_t21 = df_t21.drop(df_t21.index[0])
 df_t21 = df_t21.astype({i:"float" for i in df_t21.columns[2:]})
+df_t21 = df_t21.rename(columns={'건강(영양)에 좋은 제품을 구입하겠다':'건강한 제품'
+                            ,'원료의 품질과 안전성이 확보된 제품 구입하겠다':'원료 안전성'
+                            ,'다양하고 새로운 맛을 낸 제품 구입하겠다':'새롭고 다양한 맛'
+                            ,'소포장 사용 및 취식·조리 간편화된 제품 구입하겠다':'소포장, 조리 간편화'
+                            ,'제품의 업그레이드/신제품 개발과 관계없이 가격만 저렴하면 구입하겠다':'오로지 가격'})
 
 
 df19_c = df_t19[df_t19['특성별(1)'] == '가구원수별']
@@ -72,29 +87,18 @@ df_21_c = df_21_c.rename_axis('가구원수별')
 
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
-st.write("""
-### 2019년
-""")
 
-fig = df_19_c.T.plot(kind='bar', figsize=(25,10), rot=5, fontsize=15)
-plt.title("2019년 가구원수별", fontsize=20)
+fig = df_19_c.T.plot(kind='bar', figsize=(25,10), rot=0, fontsize=25)
+plt.title("2019년 가구원수별", fontsize=30)
 plt.legend(fontsize=20, bbox_to_anchor=(1.2,1))
 st.pyplot(plt.show())
 
-st.write("""
-### 2020년
-""")
-
-fig = df_20_c.T.plot(kind='bar', figsize=(25,10), rot=5, fontsize=15)
-plt.title("2020년 가구원수별", fontsize=20)
+fig = df_20_c.T.plot(kind='bar', figsize=(25,10), rot=0, fontsize=25)
+plt.title("2020년 가구원수별", fontsize=30)
 plt.legend(fontsize=20, bbox_to_anchor=(1.2,1))
 st.pyplot(plt.show())
 
-st.write("""
-### 2021년
-""")
-
-fig = df_21_c.T.plot(kind='bar', figsize=(25,10), rot=5, fontsize=15)
-plt.title("2021년 가구원수별", fontsize=20)
+fig = df_21_c.T.plot(kind='bar', figsize=(25,10), rot=0, fontsize=25)
+plt.title("2021년 가구원수별", fontsize=30)
 plt.legend(fontsize=20, bbox_to_anchor=(1.2,1))
 st.pyplot(plt.show())
