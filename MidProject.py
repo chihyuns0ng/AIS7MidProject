@@ -25,4 +25,8 @@ load_image("main_1.jpg")
 load_image("main_2.jpg")
 
 st.image("main_1.jpg")
+
+st.markdown("# ")
+st.markdown("# ")
+
 st.image("main_2.jpg")
