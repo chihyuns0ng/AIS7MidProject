@@ -32,6 +32,7 @@ df_21 = load_data(url21)
 
 df_t21 = df_21.rename(columns=df_21.iloc[0])
 df_t21 = df_t21.drop(df_t21.index[0])
+df_t21 = df_t21.drop(columns=['제품이 다양하지 않아서','기타'])
 df_t21 = df_t21.astype({i:"float" for i in df_t21.columns[2:]})
 
 
@@ -51,17 +52,17 @@ df_21_s = df_21_s.set_index(keys='특성별(2)')
 df_21_s = df_21_s.rename_axis('성별')
 
 
-fig = df_21_c.T.plot(kind='bar', figsize=(25,10), rot=35, fontsize=15)
+fig = df_21_c.T.plot(kind='barh', figsize=(25,12), rot=0, fontsize=20)
 plt.title("2021년 가구원수별", fontsize=20)
 plt.legend(fontsize=20, bbox_to_anchor=(1.2,1))
 st.pyplot(plt.show())
 
-fig = df_21_s.T.plot(kind='bar', figsize=(25,10), rot=35, fontsize=15)
+fig = df_21_s.T.plot(kind='barh', figsize=(25,12), rot=0, fontsize=20)
 plt.title("2021년 성별", fontsize=20)
 plt.legend(fontsize=20, bbox_to_anchor=(1.2,1))
 st.pyplot(plt.show())
 
-fig = df_21_a.T.plot(kind='bar', figsize=(25,10), rot=35, fontsize=15)
+fig = df_21_a.T.plot(kind='barh', figsize=(25,12), rot=0, fontsize=20)
 plt.title("2021년 연령별", fontsize=20)
 plt.legend(fontsize=20, bbox_to_anchor=(1.2,1))
 st.pyplot(plt.show())
