@@ -15,7 +15,7 @@ url = "https://raw.githubusercontent.com/hj2628/AIS7MidProject/main/2019_%E1%84%
 
 url_2 = "https://raw.githubusercontent.com/hj2628/AIS7MidProject/main/2020_%E1%84%80%E1%85%AE%E1%84%86%E1%85%A2%E1%84%83%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A5_%E1%84%8B%E1%85%AF%E1%86%AF%E1%84%87%E1%85%A7%E1%86%AF_%E1%84%91%E1%85%AE%E1%86%B7%E1%84%86%E1%85%A9%E1%86%A8%E1%84%80%E1%85%AE%E1%86%AB%E1%84%87%E1%85%A7%E1%86%AF_%E1%84%80%E1%85%AE%E1%84%86%E1%85%A2%E1%84%8E%E1%85%AE%E1%84%8B%E1%85%B5"
 
-url_3 = "https://raw.githubusercontent.com/chihyuns0ng/AIS7MidProject/main/data/purchase_data.csv
+url_3 = "https://raw.githubusercontent.com/chihyuns0ng/AIS7MidProject/main/data/purchase_data.csv"
 
 
 @st.cache
