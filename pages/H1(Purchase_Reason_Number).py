@@ -19,9 +19,9 @@ st.sidebar.markdown("# 가구원수별👨‍👩‍👧‍👦")
 
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
-url = ["https://raw.githubusercontent.com/chihyuns0ng/AIS7MidProject/main/data/kosis3_19.csv?token=GHSAT0AAAAAAB2CCWJN72UB6C4D4FBDCYKQY2R6YOA"
-, "https://raw.githubusercontent.com/chihyuns0ng/AIS7MidProject/main/data/kosis3_20.csv?token=GHSAT0AAAAAAB2CCWJMGCLC4V4C2TRSQZGOY2R6ZIQ"
-, "https://raw.githubusercontent.com/chihyuns0ng/AIS7MidProject/main/data/kosis3_21.csv?token=GHSAT0AAAAAAB2CCWJNRHGMKZE4D66N3TZUY2R6ZKA"
+url = ["https://raw.githubusercontent.com/chihyuns0ng/AIS7MidProject/main/data/kosis3_19.csv?token=GHSAT0AAAAAAB2CCWJN72UB6C4D4FBDCYKQY2R6YOA.csv"
+, "https://raw.githubusercontent.com/chihyuns0ng/AIS7MidProject/main/data/kosis3_20.csv?token=GHSAT0AAAAAAB2CCWJMGCLC4V4C2TRSQZGOY2R6ZIQ.csv"
+, "https://raw.githubusercontent.com/chihyuns0ng/AIS7MidProject/main/data/kosis3_21.csv?token=GHSAT0AAAAAAB2CCWJNRHGMKZE4D66N3TZUY2R6ZKA.csv"
 ]
 
 
