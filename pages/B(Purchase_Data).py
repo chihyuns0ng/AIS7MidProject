@@ -56,8 +56,7 @@ st.plotly_chart(pxh)
 data_3 = data_3[["count"]]
 data_3.loc["Others"] = data_3["count"][5:].sum()
 
-data_3 = data_3.drop(["생수 · 과자 · 라면 · 커피", "생선 · 건해산물", "주류", "치킨 · 초밥 · 베이커리"
-                  , "견과 · 선식 · 차류", "쌀 · 잡곡", "장 건강", "홍삼 · 면역", "비타민 · 미네랄", "건강소재 · 꿀"])
+data_3 = data_3.drop(["생수 · 과자 · 라면 · 커피", "생선 · 건해산물", "주류", "치킨 · 초밥 · 베이커리", "견과 · 선식 · 차류", "쌀 · 잡곡", "장 건강", "홍삼 · 면역", "비타민 · 미네랄", "건강소재 · 꿀"])
 
 
 fig = plt.pie(data_3["count"], labels=data_3.index, startangle=180, autopct='%1.1f%%', counterclock=False, wedgeprops=dict(width=0.5))
