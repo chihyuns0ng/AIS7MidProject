@@ -12,7 +12,6 @@ st.set_page_config(
 )
 
 st.markdown("# 😷코로나19 감염현황😷")
-st.sidebar.markdown("# 코로나19 감염현황💊")
 
 url_3 = "https://raw.githubusercontent.com/hj2628/AIS7MidProject/main/20%E1%84%82%E1%85%A7%E1%86%AB%E1%84%83%E1%85%A9_%E1%84%8B%E1%85%AF%E1%86%AF%E1%84%87%E1%85%A7%E1%86%AF_%E1%84%8F%E1%85%A9%E1%84%85%E1%85%A9%E1%84%82%E1%85%A1_%E1%84%92%E1%85%AA%E1%86%A8%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%8C%E1%85%A1%E1%84%89%E1%85%AE"
 
