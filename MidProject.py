@@ -8,12 +8,12 @@ import koreanize_matplotlib
 from PIL import Image
 
 st.set_page_config(
-    page_title="1론머스크 MidProject",
+    page_title="유통데이터 활용 경진대회",
     page_icon="🚀",
     layout="wide",
 )
 
-st.markdown("# 🚀유통데이터 활용 경진대회📊")
+st.markdown("# 🚚유통데이터 활용 경진대회📊")
 st.markdown("# ")
 st.markdown("# ")
 
