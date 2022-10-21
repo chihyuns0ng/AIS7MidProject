@@ -39,7 +39,6 @@ data_2 = load_data(url_2)
 data_3 = load_data(url_3)
 
 st.markdown("## 🚀19~20년도 구매데이터🚀")
-st.sidebar.markdown("# 🚀19~20년도 구매데이터🚀")
 
 st.dataframe(data)
 st.dataframe(data_2)
