@@ -44,9 +44,11 @@ st.write("""
 ### 2019년
 """)
 
-fig = kosis3_19_age.T[:-2].plot(kind="bar", figsize=(20,10),fontsize=15, rot=20)
-plt.title("2019년 연령별", fontsize=20)
-plt.legend(fontsize=20, bbox_to_anchor=(1.2,1))
+
+fig = plt.pie(df.T["2019년"][:-2], labels=df.T.index[:-2], startangle=180, autopct='%1.1f%%', counterclock=False, wedgeprops=dict(width=0.5), figsize=(8,8)
+            , explode=(0.02, 0.02, 0.02, 0.02, 0.02, 0.02, 0.02, 0.02), colors=["royalblue", "gold", "silver", "tomato", "violet", "darkgray", "gainsboro", "gainsboro"])
+plt.legend(bbox_to_anchor=(1.1,1))
+plt.title("2019년 구입 이유")
 st.pyplot(plt.show())
 
 st.write("""
