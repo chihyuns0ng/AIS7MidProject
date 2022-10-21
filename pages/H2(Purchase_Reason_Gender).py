@@ -42,13 +42,27 @@ kosis3_20_gender = kosis3_20_gender.rename_axis("가구원수")
 kosis3_21_gender = kosis3_21_gender.set_index("특성별(2)")
 kosis3_21_gender = kosis3_21_gender.rename_axis("가구원수")
 
+kosis3_gender = pd.concat([kosis3_19_gender, kosis3_20_gender, kosis3_21_gender])
+
+kosis3_gender.loc["2019년"] = 0
+kosis3_gender.loc["2020년"] = 0
+kosis3_gender.loc["2021년"] = 0
+
+for i in kosis3_gender.columns:
+    kosis3_gender.loc["2019년"][i] = (kosis3_gender.loc["남성"][i][0] + kosis3_gender.loc["여성"][i][0]) / 2
+    kosis3_gender.loc["2020년"][i] = (kosis3_gender.loc["남성"][i][1] + kosis3_gender.loc["여성"][i][1]) / 2
+    kosis3_gender.loc["2021년"][i] = (kosis3_gender.loc["남성"][i][2] + kosis3_gender.loc["여성"][i][2]) / 2
+    
+df = kosis3_gender.drop(["남성", "여성"])
+
 st.write("""
 ### 2019년
 """)
 
-fig = kosis3_19_gender.T[:-2].plot(kind="bar", figsize=(20,10),fontsize=15, rot=20)
-plt.title("2019년 성별별", fontsize=20)
-plt.legend(fontsize=20, bbox_to_anchor=(1.2,1))
+fig = plt.pie(df.T["2019년"][:-2], labels=df.T.index[:-2], startangle=180, autopct='%1.1f%%', counterclock=False, wedgeprops=dict(width=0.5), figsize=(8,8)
+            , explode=(0.02, 0.02, 0.02, 0.02, 0.02, 0.02, 0.02, 0.02), colors=["royalblue", "gold", "silver", "tomato", "violet", "darkgray", "gainsboro", "gainsboro"])
+plt.legend(bbox_to_anchor=(1.1,1))
+plt.title("2019년 구입 이유")
 st.pyplot(plt.show())
 
 st.write("""
