@@ -24,8 +24,17 @@ def load_data(url21):
 
 df_21 = load_data(url21)
 
+
+@st.cache
+def load_data(url21):
+    df_21 = pd.read_csv(url21, encoding='cp949')
+    return df_21
+
+df_21 = load_data(url21)
+
 df_t21 = df_21.rename(columns=df_21.iloc[0])
 df_t21 = df_t21.drop(df_t21.index[0])
+df_t21
 df_t21 = df_t21.drop(columns=['제품이 다양하지 않아서','기타'])
 df_t21 = df_t21.astype({i:"float" for i in df_t21.columns[2:]})
 
