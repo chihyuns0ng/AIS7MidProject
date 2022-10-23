@@ -88,17 +88,17 @@ df_21_c = df_21_c.rename_axis('가구원수별')
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
 
-fig = df_19_c.T.plot(kind='bar', figsize=(25,10), rot=0, fontsize=25)
+df_19_c.T.plot(kind='bar', figsize=(25,10), rot=0, fontsize=25)
 plt.title("2019년 가구원수별", fontsize=30)
 plt.legend(fontsize=20, bbox_to_anchor=(1.2,1))
 st.pyplot(plt.show())
 
-fig = df_20_c.T.plot(kind='bar', figsize=(25,10), rot=0, fontsize=25)
+df_20_c.T.plot(kind='bar', figsize=(25,10), rot=0, fontsize=25)
 plt.title("2020년 가구원수별", fontsize=30)
 plt.legend(fontsize=20, bbox_to_anchor=(1.2,1))
 st.pyplot(plt.show())
 
-fig = df_21_c.T.plot(kind='bar', figsize=(25,10), rot=0, fontsize=25)
+df_21_c.T.plot(kind='bar', figsize=(25,10), rot=0, fontsize=25)
 plt.title("2021년 가구원수별", fontsize=30)
 plt.legend(fontsize=20, bbox_to_anchor=(1.2,1))
 st.pyplot(plt.show())

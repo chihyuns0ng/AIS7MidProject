@@ -46,17 +46,17 @@ df_21_s = df_21_s.set_index(keys='특성별(2)')
 df_21_s = df_21_s.rename_axis('성별')
 
 
-fig = df_21_c.T.plot(kind='barh', figsize=(25,12), rot=0, fontsize=20)
+df_21_c.T.plot(kind='barh', figsize=(25,12), rot=0, fontsize=20)
 plt.title("가구원수별 간편식을 구입하지 않는 이유", fontsize=20)
 plt.legend(fontsize=20, bbox_to_anchor=(1.2,1))
 st.pyplot(plt.show())
 
-fig = df_21_s.T.plot(kind='barh', figsize=(25,12), rot=0, fontsize=20)
+df_21_s.T.plot(kind='barh', figsize=(25,12), rot=0, fontsize=20)
 plt.title("성별 간편식을 구입하지 않는 이유", fontsize=20)
 plt.legend(fontsize=20, bbox_to_anchor=(1.2,1))
 st.pyplot(plt.show())
 
-fig = df_21_a.T.plot(kind='barh', figsize=(25,12), rot=0, fontsize=20)
+df_21_a.T.plot(kind='barh', figsize=(25,12), rot=0, fontsize=20)
 plt.title("연령별 간편식을 구입하지 않는 이유", fontsize=20)
 plt.legend(fontsize=20, bbox_to_anchor=(1.2,1))
 st.pyplot(plt.show())

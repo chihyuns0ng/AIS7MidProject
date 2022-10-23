@@ -107,13 +107,13 @@ st.write("""
 """)
 explode = [0.06, 0.02, 0.01, 0.02, 0.04]
 colors = ['whitesmoke','yellow','cornflowerblue','lightgreen', 'lightgray']
-fig = plt.pie(d19['남성'], labels=d19.index, autopct='%.1f%%', counterclock=False, explode=explode, colors=colors)
+plt.pie(d19['남성'], labels=d19.index, autopct='%.1f%%', counterclock=False, explode=explode, colors=colors)
 plt.title('2019년', size = 15)
 st.pyplot(plt.show())
 
 explode = [0.06, 0.02, 0.01, 0.02, 0.04]
 colors = ['whitesmoke','yellow','lightsalmon','lightgreen', 'lightgray']
-fig = plt.pie(d19['여성'], labels=d19.index, autopct='%.1f%%', counterclock=False, explode=explode , colors=colors)
+plt.pie(d19['여성'], labels=d19.index, autopct='%.1f%%', counterclock=False, explode=explode , colors=colors)
 plt.title('2019년', size = 15)
 st.pyplot(plt.show())
 
@@ -122,13 +122,13 @@ st.write("""
 """)
 explode = [0.06, 0.02, 0.01, 0.02, 0.04]
 colors = ['whitesmoke','yellow','cornflowerblue','lightgreen', 'lightgray']
-fig = plt.pie(d20['남성'], labels=d20.index, autopct='%.1f%%', counterclock=False, explode=explode, colors=colors)
+plt.pie(d20['남성'], labels=d20.index, autopct='%.1f%%', counterclock=False, explode=explode, colors=colors)
 plt.title('2020년', size = 15)
 st.pyplot(plt.show())
 
 explode = [0.06, 0.02, 0.01, 0.02, 0.04]
 colors = ['whitesmoke','yellow','lightsalmon','lightgreen', 'lightgray']
-fig = plt.pie(d20['여성'], labels=d20.index, autopct='%.1f%%', counterclock=False, explode=explode , colors=colors)
+plt.pie(d20['여성'], labels=d20.index, autopct='%.1f%%', counterclock=False, explode=explode , colors=colors)
 plt.title('2020년', size = 15)
 st.pyplot(plt.show())
 
@@ -137,12 +137,12 @@ st.write("""
 """)
 explode = [0.06, 0.02, 0.01, 0.02, 0.04]
 colors = ['sandybrown','cornflowerblue','yellow','lightgreen', 'lightgray']
-fig = plt.pie(d21['남성'], labels=d21.index, autopct='%.1f%%', counterclock=False, explode=explode, colors=colors)
+plt.pie(d21['남성'], labels=d21.index, autopct='%.1f%%', counterclock=False, explode=explode, colors=colors)
 plt.title('2021년', size = 15)
 st.pyplot(plt.show())
 
 explode = [0.06, 0.02, 0.01, 0.02, 0.04]
 colors = ['sandybrown','lightsalmon','yellow','lightgreen', 'lightgray']
-fig = plt.pie(d21['여성'], labels=d21.index, autopct='%.1f%%', counterclock=False, explode=explode , colors=colors)
+plt.pie(d21['여성'], labels=d21.index, autopct='%.1f%%', counterclock=False, explode=explode , colors=colors)
 plt.title('2021년', size = 15)
 st.pyplot(plt.show())
