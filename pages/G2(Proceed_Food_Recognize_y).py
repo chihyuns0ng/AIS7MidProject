@@ -158,17 +158,17 @@ df_2021_age_3=df_2021_age[df_2021_age['인식'].str.contains('전년에 비해 �
 df_2021_age_3= df_2021_age_3.drop(columns=['인식'], axis=1)
 
 
-df_2019_age_3.T.plot(kind="bar", figsize=(25,10),fontsize=25, rot=0)
+df_2019_age_3.T.plot(kind="bar", figsize=(30,10),fontsize=25, rot=0)
 plt.title("2019년 연령별 전년 대비 가공 식품 가격 상승 인식", fontsize=25)
 plt.legend(fontsize=20, bbox_to_anchor=(1.2,1))
 st.pyplot(plt.show())
 
-df_2020_age_3.T.plot(kind="bar", figsize=(25,10),fontsize=25, rot=0)
+df_2020_age_3.T.plot(kind="bar", figsize=(30,10),fontsize=25, rot=0)
 plt.title("2020년 연령별 전년 대비 가공 식품 가격 상승 인식", fontsize=25)
 plt.legend(fontsize=20, bbox_to_anchor=(1.2,1))
 st.pyplot(plt.show())
 
-df_2021_age_3.T.plot(kind="bar", figsize=(25,10),fontsize=25, rot=0)
+df_2021_age_3.T.plot(kind="bar", figsize=(30,10),fontsize=25, rot=0)
 plt.title("2021년 연령별 전년 대비 가공 식품 가격 상승 인식", fontsize=25)
 plt.legend(fontsize=20, bbox_to_anchor=(1.2,1))
 st.pyplot(plt.show())
