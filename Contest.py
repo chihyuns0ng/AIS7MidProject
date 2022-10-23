@@ -30,3 +30,8 @@ st.markdown("# ")
 st.markdown("# ")
 
 st.image("main_2.jpg")
+
+st.markdown("# ")
+st.markdown("# ")
+
+st.image("main_3.jpg")
