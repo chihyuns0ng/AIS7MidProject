@@ -160,17 +160,17 @@ df_2021_age_2=df_2021_age[df_2021_age['인식'].str.contains('나는 가공식�
 df_2021_age_2= df_2021_age_2.drop(columns=['인식'], axis=1)
 
 
-df_2019_age_2.T.plot(kind="bar", figsize=(25,10),fontsize=25, rot=0)
+df_2019_age_2.T.plot(kind="bar", figsize=(30,10),fontsize=25, rot=0)
 plt.title("2019년 연령별 식품 가격 등락 민감도", fontsize=25)
 plt.legend(fontsize=20, bbox_to_anchor=(1.2,1))
 st.pyplot(plt.show())
 
-df_2020_age_2.T.plot(kind="bar", figsize=(25,10),fontsize=25, rot=0)
+df_2020_age_2.T.plot(kind="bar", figsize=(30,10),fontsize=25, rot=0)
 plt.title("2020년 연령별 식품 가격 등락 민감도", fontsize=25)
 plt.legend(fontsize=20, bbox_to_anchor=(1.2,1))
 st.pyplot(plt.show())
 
-df_2021_age_2.T.plot(kind="bar", figsize=(25,10),fontsize=25, rot=0)
+df_2021_age_2.T.plot(kind="bar", figsize=(30,10),fontsize=25, rot=0)
 plt.title("2021년 연령별 식품 가격 등락 민감도", fontsize=25)
 plt.legend(fontsize=20, bbox_to_anchor=(1.2,1))
 st.pyplot(plt.show())
