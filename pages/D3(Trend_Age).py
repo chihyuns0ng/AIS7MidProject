@@ -87,17 +87,17 @@ df_21_a = df_21_a.rename_axis('연령별')
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
 
-fig = df_19_a.T.plot(kind='bar', figsize=(25,10), rot=0, fontsize=25)
+df_19_a.T.plot(kind='bar', figsize=(25,10), rot=0, fontsize=25)
 plt.title("2019년 연령별", fontsize=30)
 plt.legend(fontsize=20, bbox_to_anchor=(1.2,1))
 st.pyplot(plt.show())
 
-fig = df_20_a.T.plot(kind='bar', figsize=(25,10), rot=0, fontsize=25)
+df_20_a.T.plot(kind='bar', figsize=(25,10), rot=0, fontsize=25)
 plt.title("2020년 연령별", fontsize=30)
 plt.legend(fontsize=20, bbox_to_anchor=(1.2,1))
 st.pyplot(plt.show())
 
-fig = df_21_a.T.plot(kind='bar', figsize=(25,10), rot=0, fontsize=25)
+df_21_a.T.plot(kind='bar', figsize=(25,10), rot=0, fontsize=25)
 plt.title("2021년 연령별", fontsize=30)
 plt.legend(fontsize=20, bbox_to_anchor=(1.2,1))
 st.pyplot(plt.show())
