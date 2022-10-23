@@ -17,13 +17,15 @@ def load_image(image_file):
     img = Image.open(image_file)
     return img
 
+load_image("main.jpg")
 load_image("main_1.jpg")
 load_image("main_2.jpg")
 load_image("main_3.jpg")
 
 st.markdown("# 🚚유통데이터 활용 경진대회📊")
 st.markdown("# ")
-st.markdown("# ")
+st.image("main.jpg")
+
 st.write("""
 #### 유통데이터 분석을 통한 지속가능한 간편식 사업 활성화 프로젝트 
 #
