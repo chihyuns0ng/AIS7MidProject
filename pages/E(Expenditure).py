@@ -30,7 +30,8 @@ kosis4_number = pd.concat([kosis4_19_number, kosis4_20_number, kosis4_21_number]
 
 st.markdown("## 가구원수별")
 
-st.dataframe(kosis4_number)
+if st.checkbox('Dataframe'):
+    st.dataframe(kosis4_number)
 
 for i in kosis4_number.columns[1:-1]:
     fig = sns.barplot(data=kosis4_number, x="연도", y=i , hue="특성별(2)")
@@ -48,7 +49,8 @@ kosis4_gender = pd.concat([kosis4_19_gender, kosis4_20_gender, kosis4_21_gender]
 
 st.markdown("## 성별별")
 
-st.dataframe(kosis4_gender)
+if st.checkbox('Dataframe'):
+    st.dataframe(kosis4_gender)
 
 for i in kosis4_gender.columns[1:-1]:
     fig = sns.barplot(data=kosis4_gender, x="연도", y=i , hue="특성별(2)")
@@ -66,7 +68,8 @@ kosis4_age = pd.concat([kosis4_19_age, kosis4_20_age, kosis4_21_age])
 
 st.markdown("## 연령별")
 
-st.dataframe(kosis4_age)
+if st.checkbox('Dataframe'):
+    st.dataframe(kosis4_age)
 
 for i in kosis4_age.columns[1:-1]:
     fig = sns.barplot(data=kosis4_age, x="연도", y=i , hue="특성별(2)")
