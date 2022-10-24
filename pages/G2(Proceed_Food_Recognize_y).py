@@ -59,6 +59,11 @@ df_2021_num = df_2021.iloc[0:20]
 df_2021_num = df_2021_num.rename(columns={"특성별(2)": "가구원 수"})
 df_2021_num = df_2021_num.set_index("가구원 수")
 
+with st.expander('데이터프레임 보기') :
+    st.dataframe(df_2019)
+    st.dataframe(df_2020)
+    st.dataframe(df_2021)
+
 my_order = ['가구원수별', '성별', '연령별']
     
 status = st.radio('그래프 선택', my_order)
