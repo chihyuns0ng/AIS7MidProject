@@ -34,7 +34,7 @@ df_2020 = load_data(url2)
 
 @st.cache
 def load_data(url3):
-    df_21 = pd.read_csv(url3, encoding='cp949')
+    df_2021 = pd.read_csv(url3, encoding='cp949')
     return df_2021
 df_2021 = load_data(url3)
 
