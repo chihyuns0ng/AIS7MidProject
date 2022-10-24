@@ -6,8 +6,8 @@ import matplotlib.pyplot as plt
 import koreanize_matplotlib
 
 st.set_page_config(
-    page_title="구매데이터 19,20년",
-    page_icon="🚀",
+    page_title="🚀일론머스크 MID🚀",
+    page_icon="⭐️",
     layout="wide",
 )
 
