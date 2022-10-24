@@ -8,8 +8,8 @@ import koreanize_matplotlib
 # import plotly.graph_objects as go
 
 st.set_page_config(
-    page_title="간편식 구입이유",
-    page_icon="🚀",
+    page_title="🚀일론머스크 MID🚀",
+    page_icon="⭐️",
     layout="wide",
 )
 
