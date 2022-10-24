@@ -12,7 +12,7 @@ st.set_page_config(
     layout="wide",
 )
 
-st.markdown("# 가공 식품 가격 등락 민감도 📈")
+st.markdown("# 가공 식품 가격 등락 민감도📊")
 
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
@@ -70,7 +70,7 @@ df_2021_num = df_2021_num.rename(columns={"특성별(2)": "가구원 수"})
 df_2021_num = df_2021_num.set_index("가구원 수")
 
 
-with st.expander('데이터프레임 보기') :
+with st.expander('데이터프레임 보기🧾') :
     st.dataframe(df_2019)
     st.dataframe(df_2020)
     st.dataframe(df_2021)
