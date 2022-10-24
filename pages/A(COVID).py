@@ -41,9 +41,10 @@ data_5 = load_data(url_5)
 
 st.markdown("## 코로나19 감염현황 데이터")
 
-st.dataframe(data_3)
-st.dataframe(data_4)
-st.dataframe(data_5)
+if st.checkbox('Dataframe'):
+    st.dataframe(data_3)
+    st.dataframe(data_4)
+    st.dataframe(data_5)
 
 st.set_option('deprecation.showPyplotGlobalUse', False)
 plt.figure(figsize=(15, 3))
