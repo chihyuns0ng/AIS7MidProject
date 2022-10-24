@@ -38,7 +38,7 @@ data = load_data(url)
 data_2 = load_data(url_2)
 data_3 = load_data(url_3)
 
-st.markdown("## 🚀19~20년도 구매데이터🚀")
+st.markdown("# 19~20년도 구매데이터📊")
 
 with st.expander('데이터프레임 보기🧾'):
     st.dataframe(data)
