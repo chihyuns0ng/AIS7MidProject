@@ -71,7 +71,7 @@ df_t21 = df_t21.rename(columns={'건강(영양)에 좋은 제품을 구입하겠
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
 
-with st.expander('민감도 데이터프레임 보기') :
+with st.expander('데이터프레임 보기') :
     st.write("""
     ### 2019년
     """)
