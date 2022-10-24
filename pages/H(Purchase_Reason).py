@@ -13,7 +13,7 @@ st.set_page_config(
     layout="wide",
 )
 
-st.markdown("# 간편식 구입이유")
+st.markdown("# 간편식 구입 이유📊")
 
 
 st.set_option('deprecation.showPyplotGlobalUse', False)
