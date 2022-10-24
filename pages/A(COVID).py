@@ -41,7 +41,7 @@ data_5 = load_data(url_5)
 
 st.markdown("## 코로나19 감염현황 데이터")
 
-with st.expander('데이터프레임 보기') :
+with st.expander('데이터프레임 보기🧾'):
     st.dataframe(data_3)
     st.dataframe(data_4)
     st.dataframe(data_5)
