@@ -24,7 +24,8 @@ def load_data(url_7):
 
 data_7 = load_data(url_7)
 
-st.dataframe(data_7)
+if st.checkbox('Dataframe'):
+    st.dataframe(data_7)
 
 st.write("""
 ### 매우 감소
