@@ -61,7 +61,7 @@ df_2021_num = df_2021_num.set_index("가구원 수")
 
 my_order = ['가구원수별', '성별', '연령별']
     
-status = st.radio('정렬방법 선택', my_order)
+status = st.radio('그래프 선택', my_order)
 st.write('<style>div.row-widget.stRadio > div{flex-direction:row;}</style>', unsafe_allow_html=True)
 
     # 첫번째 방법
