@@ -20,35 +20,44 @@ url1="https://raw.githubusercontent.com/chihyuns0ng/AIS7MidProject/main/data/%E1
 url2="https://raw.githubusercontent.com/chihyuns0ng/AIS7MidProject/main/data/%EA%B0%80%EA%B3%B5%EC%8B%9D%ED%92%88_%EA%B0%80%EA%B2%A9%EC%97%90_%EB%8C%80%ED%95%9C_%EC%9D%B8%EC%8B%9D_2020.csv"
 url3="https://raw.githubusercontent.com/chihyuns0ng/AIS7MidProject/main/data/%EA%B0%80%EA%B3%B5%EC%8B%9D%ED%92%88_%EA%B0%80%EA%B2%A9%EC%97%90_%EB%8C%80%ED%95%9C_%EC%9D%B8%EC%8B%9D_2021.csv"
 
-df_2019 = pd.read_csv(url1, encoding="cp949")
-df_2020 = pd.read_csv(url2, encoding="cp949")
-df_2021 = pd.read_csv(url3, encoding="cp949")
+@st.cache
+def load_data(url1):
+    df_2019 = pd.read_csv(url1, encoding='cp949')
+    return df_2019
+df_2019 = load_data(url1)
+
+@st.cache
+def load_data(url2):
+    df_2020 = pd.read_csv(url2, encoding='cp949')
+    return df_2020
+df_2020 = load_data(url2)
+
+@st.cache
+def load_data(url3):
+    df_2021 = pd.read_csv(url3, encoding='cp949')
+    return df_2021
+df_2021 = load_data(url3)
 
 
 df_2019=df_2019[~df_2019['특성별(2)'].str.contains('소계')]
 df_2019=df_2019.drop(columns=['특성별(1)', '시점', '전혀 그렇지 않다 (%)'], axis=1)
 df_2019=df_2019.reset_index(drop=True)
-
 df_2019 = df_2019.rename(columns={"인식별(1)" : "인식", "그렇지 않은 편이다 (%)":"그렇지 않은 편이다", 
                                   "보통이다/그저 그렇다 (%)":"보통이다",
                                   "그런 편이다 (%)":"그런 편이다", "매우 그렇다 (%)":"매우 그렇다"})
-
 df_2019_num = df_2019.iloc[0:20]
 df_2019_num = df_2019_num.rename(columns={"특성별(2)": "가구원 수"})
 df_2019_num = df_2019_num.set_index("가구원 수")
 
-
 df_2020=df_2020[~df_2020['특성별(2)'].str.contains('소계')]
 df_2020=df_2020.drop(columns=['특성별(1)', '시점', '전혀 그렇지 않다 (%)'], axis=1)
 df_2020=df_2020.reset_index(drop=True)
-
 df_2020 = df_2020.rename(columns={"인식별(1)" : "인식", "그렇지 않은 편이다 (%)":"그렇지 않은 편이다", 
                                   "보통이다/그저 그렇다 (%)":"보통이다",
                                   "그런 편이다 (%)":"그런 편이다", "매우 그렇다 (%)":"매우 그렇다"})
 df_2020_num = df_2020.iloc[0:20]
 df_2020_num = df_2020_num.rename(columns={"특성별(2)": "가구원 수"})
 df_2020_num = df_2020_num.set_index("가구원 수")
-
 
 df_2021=df_2021[~df_2021['특성별(2)'].str.contains('소계')]
 df_2021=df_2021.drop(columns=['특성별(1)', '시점', '전혀 그렇지 않다 (%)'], axis=1)
@@ -60,6 +69,12 @@ df_2021_num = df_2021.iloc[0:20]
 df_2021_num = df_2021_num.rename(columns={"특성별(2)": "가구원 수"})
 df_2021_num = df_2021_num.set_index("가구원 수")
 
+
+with st.expander('데이터프레임 보기') :
+    st.dataframe(df_2019)
+    st.dataframe(df_2020)
+    st.dataframe(df_2021)
+    
 my_order = ['가구원수별', '성별', '연령별']
     
 status = st.radio('그래프 선택', my_order)
