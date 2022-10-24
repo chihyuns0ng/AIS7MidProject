@@ -7,8 +7,8 @@ import plotly.express as px
 import koreanize_matplotlib
 
 st.set_page_config(
-    page_title="구입변화",
-    page_icon="🚀",
+    page_title="🚀일론머스크 MID🚀",
+    page_icon="⭐️",
     layout="wide",
 )
 
