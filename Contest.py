@@ -8,8 +8,8 @@ import koreanize_matplotlib
 from PIL import Image
 
 st.set_page_config(
-    page_title="유통데이터 활용 경진대회",
-    page_icon="🚀",
+    page_title="🚀일론머스크 MID🚀",
+    page_icon="⭐️",
     layout="wide",
 )
 
