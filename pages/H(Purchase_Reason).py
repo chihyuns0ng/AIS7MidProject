@@ -54,7 +54,7 @@ for i in kosis3_gender.columns:
     
 df = kosis3_gender.drop(["남성", "여성"])
 
-if st.checkbox('Dataframe'):
+with st.expander('데이터프레임 보기🧾'):
     st.dataframe(df)
 
 fig = plt.pie(df.T["2019년"][:-2], labels=df.T.index[:-2], startangle=180, autopct='%1.1f%%', counterclock=False, wedgeprops=dict(width=0.5)

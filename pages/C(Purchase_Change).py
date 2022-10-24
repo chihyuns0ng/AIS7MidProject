@@ -24,7 +24,7 @@ def load_data(url_7):
 
 data_7 = load_data(url_7)
 
-if st.checkbox('Dataframe'):
+with st.expander('데이터프레임 보기🧾'):
     st.dataframe(data_7)
 
 st.write("""
