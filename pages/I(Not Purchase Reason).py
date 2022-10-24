@@ -34,7 +34,8 @@ df_21 = load_data(url21)
 
 df_t21 = df_21.rename(columns=df_21.iloc[0])
 df_t21 = df_t21.drop(df_t21.index[0])
-df_t21
+with st.expander('데이터프레임 보기🧾'):
+    st.dataframe(df_t21)
 df_t21 = df_t21.drop(columns=['제품이 다양하지 않아서','기타'])
 df_t21 = df_t21.astype({i:"float" for i in df_t21.columns[2:]})
 
