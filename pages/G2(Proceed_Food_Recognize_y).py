@@ -99,7 +99,7 @@ if status == my_order[0] :
     plt.legend(fontsize=20, bbox_to_anchor=(1.1,1))
     st.pyplot(plt.show())
 
-if status == my_order[1] :
+elif status == my_order[1] :
     st.write("""
     ### 성별
     """)
@@ -142,7 +142,7 @@ if status == my_order[1] :
     plt.legend(fontsize=20, bbox_to_anchor=(1.1,1))
     st.pyplot(plt.show())
 
-if status == my_order[2] :
+elif status == my_order[2] :
     st.write("""
     ### 연령별
     """)
