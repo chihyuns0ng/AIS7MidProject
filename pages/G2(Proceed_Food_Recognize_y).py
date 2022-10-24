@@ -59,116 +59,123 @@ df_2021_num = df_2021.iloc[0:20]
 df_2021_num = df_2021_num.rename(columns={"특성별(2)": "가구원 수"})
 df_2021_num = df_2021_num.set_index("가구원 수")
 
-st.write("""
-### 가구원수별
-""")
-df_2019_num_3=df_2019_num[df_2019_num['인식'].str.contains('전년에 비해 올해 가공식품 가격이 많이 상승했다')]
-df_2019_num_3= df_2019_num_3.drop(columns=['인식'], axis=1)
+my_order = ['가구원수별', '성별', '연령별']
+    
+status = st.radio('정렬방법 선택', my_order)
+st.write('<style>div.row-widget.stRadio > div{flex-direction:row;}</style>', unsafe_allow_html=True)
 
-df_2020_num_3=df_2020_num[df_2020_num['인식'].str.contains('전년에 비해 올해 가공식품 가격이 많이 상승했다')]
-df_2020_num_3= df_2020_num_3.drop(columns=['인식'], axis=1)
+    # 첫번째 방법
+if status == my_order[0] :
+    st.write("""
+    ### 가구원수별
+    """)
+    df_2019_num_3=df_2019_num[df_2019_num['인식'].str.contains('전년에 비해 올해 가공식품 가격이 많이 상승했다')]
+    df_2019_num_3= df_2019_num_3.drop(columns=['인식'], axis=1)
 
-df_2021_num_3=df_2021_num[df_2021_num['인식'].str.contains('전년에 비해 올해 가공식품 가격이 많이 상승했다')]
-df_2021_num_3= df_2021_num_3.drop(columns=['인식'], axis=1)
+    df_2020_num_3=df_2020_num[df_2020_num['인식'].str.contains('전년에 비해 올해 가공식품 가격이 많이 상승했다')]
+    df_2020_num_3= df_2020_num_3.drop(columns=['인식'], axis=1)
 
-
-df_2019_num_3.T.plot(kind="bar", figsize=(30,10),fontsize=25, rot=0)
-plt.title("2019년 가구원수별 전년 대비 가공 식품 가격 상승 인식", fontsize=25)
-plt.legend(fontsize=20, bbox_to_anchor=(1.1,1))
-st.pyplot(plt.show())
-
-df_2020_num_3.T.plot(kind="bar", figsize=(30,10),fontsize=25, rot=0)
-plt.title("2020년 가구원수별 전년 대비 가공 식품 가격 상승 인식", fontsize=25)
-plt.legend(fontsize=20, bbox_to_anchor=(1.1,1))
-st.pyplot(plt.show())
-
-df_2021_num_3.T.plot(kind="bar", figsize=(30,10),fontsize=25, rot=0)
-plt.title("2021년 가구원수별 전년 대비 가공 식품 가격 상승 인식", fontsize=25)
-plt.legend(fontsize=20, bbox_to_anchor=(1.1,1))
-st.pyplot(plt.show())
+    df_2021_num_3=df_2021_num[df_2021_num['인식'].str.contains('전년에 비해 올해 가공식품 가격이 많이 상승했다')]
+    df_2021_num_3= df_2021_num_3.drop(columns=['인식'], axis=1)
 
 
-st.write("""
-### 성별
-""")
-df_2019_gen = df_2019.iloc[20:28]
-df_2019_gen = df_2019_gen.rename(columns={"특성별(2)": "성별"})
-df_2019_gen = df_2019_gen.set_index("성별")
+    df_2019_num_3.T.plot(kind="bar", figsize=(30,10),fontsize=25, rot=0)
+    plt.title("2019년 가구원수별 전년 대비 가공 식품 가격 상승 인식", fontsize=25)
+    plt.legend(fontsize=20, bbox_to_anchor=(1.1,1))
+    st.pyplot(plt.show())
 
-df_2019_gen_3=df_2019_gen[df_2019_gen['인식'].str.contains('전년에 비해 올해 가공식품 가격이 많이 상승했다')]
-df_2019_gen_3= df_2019_gen_3.drop(columns=['인식'], axis=1)
+    df_2020_num_3.T.plot(kind="bar", figsize=(30,10),fontsize=25, rot=0)
+    plt.title("2020년 가구원수별 전년 대비 가공 식품 가격 상승 인식", fontsize=25)
+    plt.legend(fontsize=20, bbox_to_anchor=(1.1,1))
+    st.pyplot(plt.show())
 
+    df_2021_num_3.T.plot(kind="bar", figsize=(30,10),fontsize=25, rot=0)
+    plt.title("2021년 가구원수별 전년 대비 가공 식품 가격 상승 인식", fontsize=25)
+    plt.legend(fontsize=20, bbox_to_anchor=(1.1,1))
+    st.pyplot(plt.show())
 
-df_2020_gen = df_2020.iloc[20:28]
-df_2020_gen = df_2020_gen.rename(columns={"특성별(2)": "성별"})
-df_2020_gen = df_2020_gen.set_index("성별")
+if status == my_order[1] :
+    st.write("""
+    ### 성별
+    """)
+    df_2019_gen = df_2019.iloc[20:28]
+    df_2019_gen = df_2019_gen.rename(columns={"특성별(2)": "성별"})
+    df_2019_gen = df_2019_gen.set_index("성별")
 
-df_2020_gen_3=df_2020_gen[df_2020_gen['인식'].str.contains('전년에 비해 올해 가공식품 가격이 많이 상승했다')]
-df_2020_gen_3= df_2020_gen_3.drop(columns=['인식'], axis=1)
-
-
-df_2021_gen = df_2021.iloc[20:28]
-df_2021_gen = df_2021_gen.rename(columns={"특성별(2)": "성별"})
-df_2021_gen = df_2021_gen.set_index("성별")
-
-df_2021_gen_3=df_2021_gen[df_2021_gen['인식'].str.contains('전년에 비해 올해 가공식품 가격이 많이 상승했다')]
-df_2021_gen_3= df_2021_gen_3.drop(columns=['인식'], axis=1)
-
-
-df_2019_gen_3.T.plot(kind="bar", figsize=(30,10),fontsize=25, rot=0)
-plt.title("2019년 성별 전년 대비 가공 식품 가격 상승 인식", fontsize=25)
-plt.legend(fontsize=20, bbox_to_anchor=(1.1,1))
-st.pyplot(plt.show())
-
-df_2020_gen_3.T.plot(kind="bar", figsize=(30,10),fontsize=25, rot=0)
-plt.title("2020년 성별 전년 대비 가공 식품 가격 상승 인식", fontsize=25)
-plt.legend(fontsize=20, bbox_to_anchor=(1.1,1))
-st.pyplot(plt.show())
-
-df_2021_gen_3.T.plot(kind="bar", figsize=(30,10),fontsize=25, rot=0)
-plt.title("2021년 성별 전년 대비 가공 식품 가격 상승 인식", fontsize=25)
-plt.legend(fontsize=20, bbox_to_anchor=(1.1,1))
-st.pyplot(plt.show())
+    df_2019_gen_3=df_2019_gen[df_2019_gen['인식'].str.contains('전년에 비해 올해 가공식품 가격이 많이 상승했다')]
+    df_2019_gen_3= df_2019_gen_3.drop(columns=['인식'], axis=1)
 
 
-st.write("""
-### 연령별
-""")
-df_2019_age = df_2019.iloc[28:]
-df_2019_age = df_2019_age.rename(columns={"특성별(2)": "연령별"})
-df_2019_age = df_2019_age.set_index("연령별")
+    df_2020_gen = df_2020.iloc[20:28]
+    df_2020_gen = df_2020_gen.rename(columns={"특성별(2)": "성별"})
+    df_2020_gen = df_2020_gen.set_index("성별")
 
-df_2019_age_3=df_2019_age[df_2019_age['인식'].str.contains('전년에 비해 올해 가공식품 가격이 많이 상승했다')]
-df_2019_age_3= df_2019_age_3.drop(columns=['인식'], axis=1)
+    df_2020_gen_3=df_2020_gen[df_2020_gen['인식'].str.contains('전년에 비해 올해 가공식품 가격이 많이 상승했다')]
+    df_2020_gen_3= df_2020_gen_3.drop(columns=['인식'], axis=1)
 
 
-df_2020_age = df_2020.iloc[28:]
-df_2020_age = df_2020_age.rename(columns={"특성별(2)": "성별"})
-df_2020_age = df_2020_age.set_index("성별")
+    df_2021_gen = df_2021.iloc[20:28]
+    df_2021_gen = df_2021_gen.rename(columns={"특성별(2)": "성별"})
+    df_2021_gen = df_2021_gen.set_index("성별")
 
-df_2020_age_3=df_2020_age[df_2020_age['인식'].str.contains('전년에 비해 올해 가공식품 가격이 많이 상승했다')]
-df_2020_age_3= df_2020_age_3.drop(columns=['인식'], axis=1)
-
-
-df_2021_age = df_2021.iloc[28:]
-df_2021_age = df_2021_age.rename(columns={"특성별(2)": "연령별"})
-df_2021_age = df_2021_age.set_index("연령별")
-
-df_2021_age_3=df_2021_age[df_2021_age['인식'].str.contains('전년에 비해 올해 가공식품 가격이 많이 상승했다')]
-df_2021_age_3= df_2021_age_3.drop(columns=['인식'], axis=1)
+    df_2021_gen_3=df_2021_gen[df_2021_gen['인식'].str.contains('전년에 비해 올해 가공식품 가격이 많이 상승했다')]
+    df_2021_gen_3= df_2021_gen_3.drop(columns=['인식'], axis=1)
 
 
-df_2019_age_3.T.plot(kind="bar", figsize=(30,10),fontsize=25, rot=0)
-plt.title("2019년 연령별 전년 대비 가공 식품 가격 상승 인식", fontsize=25)
-plt.legend(fontsize=20, bbox_to_anchor=(1.2,1))
-st.pyplot(plt.show())
+    df_2019_gen_3.T.plot(kind="bar", figsize=(30,10),fontsize=25, rot=0)
+    plt.title("2019년 성별 전년 대비 가공 식품 가격 상승 인식", fontsize=25)
+    plt.legend(fontsize=20, bbox_to_anchor=(1.1,1))
+    st.pyplot(plt.show())
 
-df_2020_age_3.T.plot(kind="bar", figsize=(30,10),fontsize=25, rot=0)
-plt.title("2020년 연령별 전년 대비 가공 식품 가격 상승 인식", fontsize=25)
-plt.legend(fontsize=20, bbox_to_anchor=(1.2,1))
-st.pyplot(plt.show())
+    df_2020_gen_3.T.plot(kind="bar", figsize=(30,10),fontsize=25, rot=0)
+    plt.title("2020년 성별 전년 대비 가공 식품 가격 상승 인식", fontsize=25)
+    plt.legend(fontsize=20, bbox_to_anchor=(1.1,1))
+    st.pyplot(plt.show())
 
-df_2021_age_3.T.plot(kind="bar", figsize=(30,10),fontsize=25, rot=0)
-plt.title("2021년 연령별 전년 대비 가공 식품 가격 상승 인식", fontsize=25)
-plt.legend(fontsize=20, bbox_to_anchor=(1.2,1))
-st.pyplot(plt.show())
+    df_2021_gen_3.T.plot(kind="bar", figsize=(30,10),fontsize=25, rot=0)
+    plt.title("2021년 성별 전년 대비 가공 식품 가격 상승 인식", fontsize=25)
+    plt.legend(fontsize=20, bbox_to_anchor=(1.1,1))
+    st.pyplot(plt.show())
+
+if status == my_order[2] :
+    st.write("""
+    ### 연령별
+    """)
+    df_2019_age = df_2019.iloc[28:]
+    df_2019_age = df_2019_age.rename(columns={"특성별(2)": "연령별"})
+    df_2019_age = df_2019_age.set_index("연령별")
+
+    df_2019_age_3=df_2019_age[df_2019_age['인식'].str.contains('전년에 비해 올해 가공식품 가격이 많이 상승했다')]
+    df_2019_age_3= df_2019_age_3.drop(columns=['인식'], axis=1)
+
+
+    df_2020_age = df_2020.iloc[28:]
+    df_2020_age = df_2020_age.rename(columns={"특성별(2)": "성별"})
+    df_2020_age = df_2020_age.set_index("성별")
+
+    df_2020_age_3=df_2020_age[df_2020_age['인식'].str.contains('전년에 비해 올해 가공식품 가격이 많이 상승했다')]
+    df_2020_age_3= df_2020_age_3.drop(columns=['인식'], axis=1)
+
+
+    df_2021_age = df_2021.iloc[28:]
+    df_2021_age = df_2021_age.rename(columns={"특성별(2)": "연령별"})
+    df_2021_age = df_2021_age.set_index("연령별")
+
+    df_2021_age_3=df_2021_age[df_2021_age['인식'].str.contains('전년에 비해 올해 가공식품 가격이 많이 상승했다')]
+    df_2021_age_3= df_2021_age_3.drop(columns=['인식'], axis=1)
+
+
+    df_2019_age_3.T.plot(kind="bar", figsize=(30,10),fontsize=25, rot=0)
+    plt.title("2019년 연령별 전년 대비 가공 식품 가격 상승 인식", fontsize=25)
+    plt.legend(fontsize=20, bbox_to_anchor=(1.2,1))
+    st.pyplot(plt.show())
+
+    df_2020_age_3.T.plot(kind="bar", figsize=(30,10),fontsize=25, rot=0)
+    plt.title("2020년 연령별 전년 대비 가공 식품 가격 상승 인식", fontsize=25)
+    plt.legend(fontsize=20, bbox_to_anchor=(1.2,1))
+    st.pyplot(plt.show())
+
+    df_2021_age_3.T.plot(kind="bar", figsize=(30,10),fontsize=25, rot=0)
+    plt.title("2021년 연령별 전년 대비 가공 식품 가격 상승 인식", fontsize=25)
+    plt.legend(fontsize=20, bbox_to_anchor=(1.2,1))
+    st.pyplot(plt.show())
