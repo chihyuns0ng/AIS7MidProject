@@ -131,7 +131,7 @@ if status == my_order[0] :
 elif status == my_order[1] :
     st.markdown("### 식품소비 성별 동조성 📈")
     
-       if st.button('2019년') :
+    if st.button('2019년') :
         st.write("""
         ### 2019년
         """)
