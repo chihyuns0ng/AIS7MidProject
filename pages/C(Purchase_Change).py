@@ -27,47 +27,59 @@ data_7 = load_data(url_7)
 with st.expander('데이터프레임 보기🧾'):
     st.dataframe(data_7)
 
-st.write("""
-### 매우 감소
-""")
+    
+my_order = ['매우 감소', '약간 감소', '비슷', '약간 증가', '매우 증가']
+    
+status = st.radio('그래프 선택', my_order)
+st.write('<style>div.row-widget.stRadio > div{flex-direction:row;}</style>', unsafe_allow_html=True)
 
-plt.figure(figsize=(15, 5))
-sns.barplot(data=data_7, x="연도", y="매우감소", hue="품목군").set_title("연도별 간편식 구입변화(%)")
-plt.legend(bbox_to_anchor=(1.12,1))
-st.pyplot()
+    # 첫번째 방법
+if status == my_order[0] :
+    st.write("""
+    ### 매우 감소
+    """)
 
-st.write("""
-### 약간 감소
-""")
+    plt.figure(figsize=(15, 5))
+    sns.barplot(data=data_7, x="연도", y="매우감소", hue="품목군").set_title("연도별 간편식 구입변화(%)")
+    plt.legend(bbox_to_anchor=(1.12,1))
+    st.pyplot()
 
-plt.figure(figsize=(15, 5))
-sns.barplot(data=data_7, x="연도", y="약간감소", hue="품목군").set_title("연도별 간편식 구입변화(%)")
-plt.legend(bbox_to_anchor=(1.12,1))
-st.pyplot()
+if status == my_order[1] :
+    st.write("""
+    ### 약간 감소
+    """)
 
-st.write("""
-### 비슷
-""")
+    plt.figure(figsize=(15, 5))
+    sns.barplot(data=data_7, x="연도", y="약간감소", hue="품목군").set_title("연도별 간편식 구입변화(%)")
+    plt.legend(bbox_to_anchor=(1.12,1))
+    st.pyplot()
 
-plt.figure(figsize=(15, 5))
-sns.barplot(data=data_7, x="연도", y="비슷", hue="품목군").set_title("연도별 간편식 구입변화(%)")
-plt.legend(bbox_to_anchor=(1.12,1))
-st.pyplot()
+if status == my_order[2] :
+    st.write("""
+    ### 비슷
+    """)
 
-st.write("""
-### 약간 증가
-""")
+    plt.figure(figsize=(15, 5))
+    sns.barplot(data=data_7, x="연도", y="비슷", hue="품목군").set_title("연도별 간편식 구입변화(%)")
+    plt.legend(bbox_to_anchor=(1.12,1))
+    st.pyplot()
 
-plt.figure(figsize=(15, 5))
-sns.barplot(data=data_7, x="연도", y="약간증가", hue="품목군").set_title("연도별 간편식 구입변화(%)")
-plt.legend(bbox_to_anchor=(1.12,1))
-st.pyplot()
+if status == my_order[3] :
+    st.write("""
+    ### 약간 증가
+    """)
 
-st.write("""
-### 매우 증가
-""")
+    plt.figure(figsize=(15, 5))
+    sns.barplot(data=data_7, x="연도", y="약간증가", hue="품목군").set_title("연도별 간편식 구입변화(%)")
+    plt.legend(bbox_to_anchor=(1.12,1))
+    st.pyplot()
 
-plt.figure(figsize=(15, 5))
-sns.barplot(data=data_7, x="연도", y="매우증가", hue="품목군").set_title("연도별 간편식 구입변화(%)")
-plt.legend(bbox_to_anchor=(1.12,1))
-st.pyplot()
+if status == my_order[4] :
+    st.write("""
+    ### 매우 증가
+    """)
+
+    plt.figure(figsize=(15, 5))
+    sns.barplot(data=data_7, x="연도", y="매우증가", hue="품목군").set_title("연도별 간편식 구입변화(%)")
+    plt.legend(bbox_to_anchor=(1.12,1))
+    st.pyplot()
