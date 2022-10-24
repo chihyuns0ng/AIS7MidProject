@@ -131,7 +131,14 @@ if status == my_order[0] :
 elif status == my_order[1] :
     st.markdown("### 식품소비 성별 동조성 📈")
     
-    if st.button('2019년') :
+    my_order1 = ['2019년', '2020년', '2021년']
+    
+    status1 = st.radio('년도 선택', my_order1)
+    st.write('<style>div.row-widget.stRadio > div{flex-direction:row;}</style>', unsafe_allow_html=True)
+
+    st.set_option('deprecation.showPyplotGlobalUse', False)
+   
+    if status1 == my_order1[0]:
         st.write("""
         ### 2019년
         """)
@@ -163,7 +170,7 @@ elif status == my_order[1] :
         plt.title('2019년', size = 15)
         st.pyplot(plt.show())
 
-    if st.button('2020년') :
+    elif status1 == my_order1[1]:
         st.write("""
         ### 2020년
         """)
@@ -195,7 +202,7 @@ elif status == my_order[1] :
         plt.title('2020년', size = 15)
         st.pyplot(plt.show())
 
-    if st.button('2021년') :
+    elif status1 == my_order1[2]:
         st.write("""
         ### 2021년
         """)
