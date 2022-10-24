@@ -24,7 +24,8 @@ def load_data(url_6):
 
 data_6 = load_data(url_6)
 
-st.dataframe(data_6)
+if st.checkbox('Dataframe'):
+    st.dataframe(data_6)
 
 st.write("""
 ### 경험 없음

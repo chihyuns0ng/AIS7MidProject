@@ -40,9 +40,10 @@ data_3 = load_data(url_3)
 
 st.markdown("## 🚀19~20년도 구매데이터🚀")
 
-st.dataframe(data)
-st.dataframe(data_2)
-st.dataframe(data_3)
+if st.checkbox('Dataframe'):
+    st.dataframe(data)
+    st.dataframe(data_2)
+    st.dataframe(data_3)
 
 pxh = px.histogram(data, x="월", y="Sales_Unit", color="MasterCategoryFullName", histfunc="sum", barmode="group", title="19년 품목별 구매추이")
 st.plotly_chart(pxh)
