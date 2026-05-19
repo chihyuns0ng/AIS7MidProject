@@ -24,56 +24,51 @@ kosis3_19 = pd.read_csv(url[0])
 kosis3_20 = pd.read_csv(url[1])
 kosis3_21 = pd.read_csv(url[2])
 
-kosis3_19_gender = kosis3_19[6:8].drop("특성별(1)", axis=1)
-kosis3_20_gender = kosis3_20[6:8].drop("특성별(1)", axis=1)
-kosis3_21_gender = kosis3_21[5:7].drop("특성별(1)", axis=1)
+kosis3_19_gender = kosis3_19[6:8].drop("특성별(1)", axis=1).set_index("특성별(2)").rename_axis("가구원수")
+kosis3_20_gender = kosis3_20[6:8].drop("특성별(1)", axis=1).set_index("특성별(2)").rename_axis("가구원수")
+kosis3_21_gender = kosis3_21[5:7].drop("특성별(1)", axis=1).set_index("특성별(2)").rename_axis("가구원수")
 
-kosis3_19_gender = kosis3_19_gender.set_index("특성별(2)").rename_axis("가구원수")
-kosis3_20_gender = kosis3_20_gender.set_index("특성별(2)").rename_axis("가구원수")
-kosis3_21_gender = kosis3_21_gender.set_index("특성별(2)").rename_axis("가구원수")
+# 수치형으로 변환
+kosis3_19_gender = kosis3_19_gender.apply(pd.to_numeric, errors='coerce')
+kosis3_20_gender = kosis3_20_gender.apply(pd.to_numeric, errors='coerce')
+kosis3_21_gender = kosis3_21_gender.apply(pd.to_numeric, errors='coerce')
 
-kosis3_gender = pd.concat([kosis3_19_gender, kosis3_20_gender, kosis3_21_gender])
+# 연도별 남녀 평균을 iloc(위치 기반)으로 안전하게 계산
+def calc_avg(df):
+    return (df.iloc[0] + df.iloc[1]) / 2
 
-kosis3_gender.loc["2019년"] = 0
-kosis3_gender.loc["2020년"] = 0
-kosis3_gender.loc["2021년"] = 0
+avg_19 = calc_avg(kosis3_19_gender)
+avg_20 = calc_avg(kosis3_20_gender)
+avg_21 = calc_avg(kosis3_21_gender)
 
-for i in kosis3_gender.columns:
-    kosis3_gender.loc["2019년"][i] = (kosis3_gender.loc["남성"][i][0] + kosis3_gender.loc["여성"][i][0]) / 2
-    kosis3_gender.loc["2020년"][i] = (kosis3_gender.loc["남성"][i][1] + kosis3_gender.loc["여성"][i][1]) / 2
-    kosis3_gender.loc["2021년"][i] = (kosis3_gender.loc["남성"][i][2] + kosis3_gender.loc["여성"][i][2]) / 2
-
-df = kosis3_gender.drop(["남성", "여성"])
+df = pd.DataFrame({"2019년": avg_19, "2020년": avg_20, "2021년": avg_21})
 
 with st.expander('데이터프레임 보기🧾'):
     st.dataframe(df)
 
-fig1, ax1 = plt.subplots()
-ax1.pie(df.T["2019년"][:-2], labels=df.T.index[:-2], startangle=180, autopct='%1.1f%%',
-        counterclock=False, wedgeprops=dict(width=0.5),
-        explode=(0.02,) * 8,
-        colors=["royalblue", "gold", "silver", "tomato", "violet", "darkgray", "gainsboro", "gainsboro"])
-ax1.legend(bbox_to_anchor=(1.2, 1.1))
-ax1.set_title("2019년 구입 이유")
-st.pyplot(fig1)
-plt.close(fig1)
 
-fig2, ax2 = plt.subplots()
-ax2.pie(df.T["2020년"][:-2], labels=df.T.index[:-2], startangle=180, autopct='%1.1f%%',
-        counterclock=False, wedgeprops=dict(width=0.5),
-        explode=(0.02,) * 8,
-        colors=["royalblue", "gold", "gainsboro", "tomato", "violet", "darkgray", "silver", "gainsboro"])
-ax2.legend(bbox_to_anchor=(1.2, 1.1))
-ax2.set_title("2020년 구입 이유")
-st.pyplot(fig2)
-plt.close(fig2)
+def draw_pie(values, labels, title, colors):
+    # NaN 또는 0 값은 pie chart 오류를 유발하므로 제거
+    mask = values.notna() & (values > 0)
+    values = values[mask]
+    labels = labels[mask]
 
-fig3, ax3 = plt.subplots()
-ax3.pie(df.T["2021년"][:-2], labels=df.T.index[:-2], startangle=180, autopct='%1.1f%%',
-        counterclock=False, wedgeprops=dict(width=0.5),
-        explode=(0.02,) * 8,
-        colors=["royalblue", "gold", "darkgray", "tomato", "violet", "darkgray", "silver", "gainsboro"])
-ax3.legend(bbox_to_anchor=(1.2, 1.1))
-ax3.set_title("2021년 구입 이유")
-st.pyplot(fig3)
-plt.close(fig3)
+    fig, ax = plt.subplots()
+    n = len(values)
+    explode = (0.02,) * n
+    ax.pie(values, labels=labels, startangle=180, autopct='%1.1f%%',
+           counterclock=False, wedgeprops=dict(width=0.5),
+           explode=explode, colors=colors[:n])
+    ax.legend(bbox_to_anchor=(1.2, 1.1))
+    ax.set_title(title)
+    st.pyplot(fig)
+    plt.close(fig)
+
+
+colors_19 = ["royalblue", "gold", "silver", "tomato", "violet", "darkgray", "gainsboro", "gainsboro"]
+colors_20 = ["royalblue", "gold", "gainsboro", "tomato", "violet", "darkgray", "silver", "gainsboro"]
+colors_21 = ["royalblue", "gold", "darkgray", "tomato", "violet", "darkgray", "silver", "gainsboro"]
+
+draw_pie(df["2019년"][:-2], df.index[:-2], "2019년 구입 이유", colors_19)
+draw_pie(df["2020년"][:-2], df.index[:-2], "2020년 구입 이유", colors_20)
+draw_pie(df["2021년"][:-2], df.index[:-2], "2021년 구입 이유", colors_21)
